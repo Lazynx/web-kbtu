@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -22,9 +23,18 @@ body {
     gap: 32px;
 }
 
-.phone-mockup {
-    max-width: 468px;
+.phone-mockup-container {
+    position: relative;
+    width: 468px;
     height: auto;
+}
+
+.phone-mockup {
+    max-width: 100%;
+    height: auto;
+    position: left;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
 }
 
 .login-container {
@@ -46,8 +56,9 @@ body {
 }
 
 .instagram-logo h1 {
-    font-family: 'Instagram Sans Script', cursive;
+    font-family: "Instagram Sans Script", cursive;
     font-size: 36px;
+    font-style: italic;
 }
 
 input {
@@ -82,7 +93,7 @@ input {
 
 .divider::before,
 .divider::after {
-    content: '';
+    content: "";
     flex: 1;
     border-bottom: 1px solid #262626;
 }
@@ -99,7 +110,7 @@ input {
     justify-content: center;
     gap: 8px;
     margin: 8px 0;
-    color: #385185;
+    color: #0095f6;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -107,7 +118,7 @@ input {
 
 .forgot-password {
     text-align: center;
-    color: #00376b;
+    color: #e0f1ff;
     font-size: 12px;
     margin-top: 12px;
     text-decoration: none;
@@ -124,7 +135,7 @@ input {
 
 .signup-box p {
     font-size: 14px;
-    color: #737373;
+    color: #F5F5F5;
 }
 
 .signup-box a {
