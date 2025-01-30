@@ -55,10 +55,14 @@ body {
     text-align: center;
 }
 
-.instagram-logo h1 {
-    font-family: "Instagram Sans Script", cursive;
-    font-size: 36px;
-    font-style: italic;
+.instagram-logo__img {
+    background-image: url(https://static.cdninstagram.com/rsrc.php/v4/yZ/r/aQSM1IiThwp.png);
+    background-position: 0px -246px;
+    background-size: 193px 751px;
+    width: 175px;
+    height: 51px;
+    background-repeat: no-repeat;
+    display: inline-block;
 }
 
 input {
