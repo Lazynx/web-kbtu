@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './todo-input.component.html',
-  styleUrls: ['./todo-input.component.css']
 })
 export class TodoInputComponent {
   newTodoText = '';
@@ -17,6 +16,8 @@ export class TodoInputComponent {
     if (text) {
       this.addTodo.emit(text);
       this.newTodoText = '';
+    } else {
+      alert('Input something in input field');
     }
   }
 }

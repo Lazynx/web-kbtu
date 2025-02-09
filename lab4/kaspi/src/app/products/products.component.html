@@ -1,0 +1,62 @@
+<div class="container mx-auto px-10 py-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div *ngFor="let product of products" class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+      <div class="relative bg-white">
+        <div class="flex snap-x snap-mandatory overflow-x-auto">
+          <div *ngFor="let image of product.images" class="snap-start shrink-0 w-full flex justify-center items-center p-4">
+            <img [src]="image" [alt]="product.name" class="w-[300px] h-[200px] object-contain">
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 flex flex-col flex-grow">
+        <div class="flex-grow">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">{{ product.name }}</h2>
+          <p class="text-gray-600 text-sm">{{ product.description }}</p>
+        </div>
+
+        <div class="space-y-4 mt-auto">
+          <div class="flex items-center">
+            <div class="flex">
+              <span *ngFor="let star of [1,2,3,4,5]" 
+                    [class.text-yellow-400]="star <= product.rating"
+                    [class.text-gray-300]="star > product.rating"
+                    class="text-lg">★</span>
+            </div>
+            <span class="ml-2 text-sm text-gray-600">{{ product.rating }}/5</span>
+          </div>
+
+          <div class="text-2xl font-bold text-red-600">
+            {{ product.price | number }} ₸
+          </div>
+
+          <div class="space-y-3">
+            <a [href]="product.kaspiLink" 
+               target="_blank"
+               class="block w-full text-center bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition duration-300">
+              Посмотреть на Kaspi.kz
+            </a>
+            
+            <div class="grid grid-cols-2 gap-2">
+              <button (click)="shareOnWhatsapp(product)"
+                      class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition duration-300">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                </svg>
+                WhatsApp
+              </button>
+              
+              <button (click)="shareOnTelegram(product)"
+                      class="flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition duration-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.51 3.67-.52.36-.99.53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.27-.48.74-.73 2.87-1.25 4.79-2.08 5.76-2.5 2.74-1.18 3.31-1.38 3.69-1.39.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .24z"/>
+                </svg>
+                Telegram
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

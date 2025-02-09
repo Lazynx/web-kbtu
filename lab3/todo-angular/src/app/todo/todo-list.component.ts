@@ -9,7 +9,6 @@ import { TodoInputComponent } from './todo-input.component';
   standalone: true,
   imports: [CommonModule, TodoItemComponent, TodoInputComponent],
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
   todos: Todo[] = [];
