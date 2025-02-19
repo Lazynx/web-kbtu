@@ -1,0 +1,9 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <app-product-item 
+      *ngFor="let product of products"
+      class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+      [product]="product"
+      (like)="onLike($event)"
+      (remove)="onRemove($event)">
+    </app-product-item>
+  </div>

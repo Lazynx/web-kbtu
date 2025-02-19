@@ -1,0 +1,20 @@
+<div class="container mx-auto px-10 py-8">
+  <h1 class="text-2xl mb-5">Категории:</h1>
+  <div class="flex gap-4 mb-8">
+    <button *ngFor="let category of categories"
+            (click)="selectCategory(category.id)"
+            [class.bg-blue-500]="selectedCategory === category.id"
+            [class.hover:bg-blue-600]="selectedCategory === category.id"
+            [class.bg-gray-200]="selectedCategory !== category.id"
+            [class.hover:bg-gray-300]="selectedCategory !== category.id"
+            class="px-4 py-2 rounded-lg text-white transition-colors cursor-pointer">
+      {{category.name}}
+    </button>
+  </div>
+
+  <app-product-list 
+    [products]="getSelectedCategoryProducts()"
+    (like)="onLike($event)"
+    (remove)="onRemove($event)">
+  </app-product-list>
+</div>
