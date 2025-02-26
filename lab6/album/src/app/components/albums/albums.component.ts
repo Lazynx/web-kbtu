@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlbumsService, Album } from '../../services/albums.service';
-import { Router, RouterModule } from '@angular/router'; // Added RouterModule
+import { Router, RouterModule } from '@angular/router'; 
 import { FormsModule } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-albums',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule], // Added RouterModule to imports
+  imports: [CommonModule, FormsModule, RouterModule], 
   templateUrl: './albums.component.html',
-  styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit {
   albums$: Observable<Album[]> = of([]); 
@@ -28,7 +27,6 @@ export class AlbumsComponent implements OnInit {
 
   createAlbum(): void {
     if (!this.newTitle.trim()) return;
-    // Add the missing method in the service (see below)
     this.albumsService.createAlbum(this.newTitle).subscribe(() => {
       this.newTitle = '';
       this.loadAlbums();

@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, RouterLink } from '@angular/router';
 import { AlbumsService, Photo } from '../../services/albums.service';
 import { Observable, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-album-photos',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, RouterLink],
   templateUrl: './album-photos.component.html',
 })
 export class AlbumPhotosComponent implements OnInit {
-  photos$: Observable<Photo[]> = of([]); // Initialize with empty array
-  albumId: number = 0; // Initialize with default value
+  photos$: Observable<Photo[]> = of([]); 
+  albumId: number = 0; 
 
   constructor(
     private route: ActivatedRoute,
