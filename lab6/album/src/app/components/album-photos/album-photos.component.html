@@ -1,0 +1,25 @@
+<div class="container mx-auto p-4">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold">Album Photos</h2>
+      <button 
+        (click)="goBack()" 
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Return
+      </button>
+    </div>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div *ngFor="let photo of photos$ | async; trackBy: trackByPhotoId" class="bg-white rounded shadow overflow-hidden">
+        <div class="p-2">
+          <h3 class="text-sm truncate mb-2" [title]="photo.title">{{ photo.title }}</h3>
+        </div>
+        <img 
+          [src]="photo.url" 
+          [alt]="photo.title" 
+          class="w-full h-auto transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>

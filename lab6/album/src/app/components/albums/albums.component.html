@@ -1,0 +1,15 @@
+<div class="grid gap-4">
+  <h1 class="text-2xl font-bold">Альбомы</h1>
+  <div class="grid gap-4">
+    <ng-container *ngIf="albums$ | async as albums">
+      <div *ngFor="let album of albums; trackBy: trackById" class="flex justify-between items-center p-4 bg-white shadow rounded">
+        <a [routerLink]="['/albums', album.id]" class="text-blue-600 hover:text-blue-800">
+          {{ album.title }}
+        </a>
+        <button (click)="deleteAlbum(album.id)" class="bg-red-500 text-white px-4 py-2 rounded cursor-pointer">
+          Удалить
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
