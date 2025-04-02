@@ -1,13 +1,14 @@
 DJANGO_MANAGE := python manage.py
 
 run:
-	cd ./src && $(DJANGO_MANAGE) runserver
+	cd ./src
+	@$(DJANGO_MANAGE) runserver
 
 migrate:
-	cd ./src && $(DJANGO_MANAGE) migrate
+	@$(DJANGO_MANAGE) migrate
 
 makemigrations:
-	cd ./src && $(DJANGO_MANAGE) makemigrations
+	@$(DJANGO_MANAGE) makemigrations
 
 init:
 	pip install -r requirements/base.txt

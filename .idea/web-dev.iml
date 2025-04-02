@@ -16,7 +16,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/lab7/products-admin" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (fastapi-users)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 virtualenv at ~/VSC/kbtu/web-dev/lab8/shop-back/venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
